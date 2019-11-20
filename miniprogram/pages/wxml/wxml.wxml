@@ -1,0 +1,76 @@
+<!--pages/wxml/wxml.wxml-->
+<!-- 1.wxml的格式 -->
+<!-- <view></view>
+<image />
+<input /> -->
+
+<!-- 2.Mustache -->
+<view>{{message}}</view>
+<view>{{firstName}} {{lastName}}</view>
+<view>{{firstName + ' ' + lastName}}</view>
+<view>{{age >= 18 ? '成年人' : '未成年人'}}</view>
+
+<view>{{nowTime}}</view>
+<button size="mini" bind:tap="handleSwitchColor">切换颜色</button>
+<view class="box {{isActive ? 'active' : ''}}"></view>
+
+<view> -------条件判断------------</view>
+<button size="mini" bind:tap="handleSwitchShow">切换显示</button>
+<view wx:if="{{isShow}}">我是通过wx:if控制的内容</view>
+<view hidden="{{!isShow}}">我是通过hidden控制的内容</view>
+
+<button size="mini" bind:tap="handleIncrement">+6</button>
+<view wx:if="{{score >= 90}}">优秀</view>
+<view wx:elif="{{score >= 80}}">良好</view>
+<view wx:elif="{{score >= 60}}">及格</view>
+<view wx:else>不及格</view>
+
+<view>-------- 列表渲染 -------------</view>
+<!-- 1.wx:for的回顾 -->
+<!-- 1.1.遍历数组/字符串/数字 -->
+<view wx:for="{{['abc', 'cba', 'nba']}}" wx:key="{{index}}">{{item}}----{{index}}</view>
+<view wx:for="{{'coderwhy'}}" wx:key="{{index}}">{{item}}----{{index}}</view>
+<view wx:for="{{3}}" wx:key="{{index}}">{{item}}---{{index}}</view>
+
+<!-- 2.block标签 -->
+<block wx:if="{{isShow}}">
+  <button>按钮</button>
+  <view>呵呵呵</view>
+  <text>我是内容\n</text>
+</block>
+
+<block wx:for="{{2}}" wx:key="{{index}}">
+  <button size="mini">按钮</button>
+  <view>hahaha</view>
+  <text>我是内容text\n</text>
+</block>
+
+<!-- 3.item, index起名字 -->
+<view wx:for="{{movies}}" 
+      wx:for-item="movie" 
+      wx:for-index="i"
+      wx:key="{{i}}">
+  {{movie}} --- {{i}}
+</view>
+
+<block wx:for="{{nums}}" wx:for-item="inner_nums" wx:for-index="i" wx:key="{{i}}">
+  <block wx:for="{{inner_nums}}" wx:key="{{index}}">
+    {{item}} --- {{index}}
+  </block>
+</block>
+
+<view>-----template------</view>
+<!-- <template name="contentItem">
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template> -->
+
+<import src="/wxml/template.wxml" />
+
+<template is="contentItem" data="{{btnText: '按钮', content: '哈哈哈'}}" />
+<template is="contentItem" data="{{btnText: '警告', content: '呵呵呵'}}" />
+<template is="contentItem" data="{{btnText: '点击', content: '嘿嘿嘿'}}" />
+<template is="contentItem" data="{{btnText: '登陆', content: '嘻嘻嘻'}}" />
+
+<import src="/wxml/abc.wxml" />
+<template is="abc" />
