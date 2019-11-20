@@ -1,66 +1,60 @@
 // miniprogram/pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    title: ['衣服', '裤子', '鞋子']
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleBtnClick() {
+    console.log('按钮发生点击')
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleTouchStart() {
+    console.log('触摸开始')
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleTouchMove() {
+    console.log('触摸移动')
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleToucnEnd() {
+    console.log('触摸结束')
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleTap() {
+    console.log('点击')
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  handleLongpress() {
+    console.log('长按')
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  handleEventClick(event) {
+    console.log('------', event)
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleEventEnd(event) {
+    console.log('+++++', event)
+  },
+  handleOuter(event) {
+    console.log('外层的view', event)
+  },
+  handleInner(event) {
+    console.log('内层的view', event)
+  },
+  handleItemClick(event) {
+    const dataset = event.currentTarget.dataset
+    const index = dataset.index
+    const item = dataset.item
+    console.log(index, item)
+  },
+  handleCaptureView1() {
+    console.log('handleCaptureView1')
+  },
+  handleCaptureView2() {
+    console.log('handleCaptureView2')
+  },
+  handleCaptureView3() {
+    console.log('handleCaptureView3')
+  },
+  handleBindView1() {
+    console.log('handleBindView1')
+  },
+  handleBindView2() {
+    console.log('handleBindView2')
+  },
+  handleBindView3() {
+    console.log('handleBindView3')
   }
 })
