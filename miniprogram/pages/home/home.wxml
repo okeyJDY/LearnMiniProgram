@@ -1,3 +1,26 @@
 <!--miniprogram/pages/home/home.wxml-->
 <text class="title">Hello World</text>
 <button size="mini">按钮</button>
+
+<!-- 1.组件的基本使用 -->
+<my-cpn />
+
+<!-- 2.自定义组件的细节 -->
+<my-style />
+
+<!-- 3.给自定义组件传递数据/样式 -->
+<my-prop title="hahaha" />
+<my-prop title="hehehe" titleclass="blue" />
+
+
+<!-- 4.组件内部发射事件 -->
+<view>{{counter}}</view>
+<my-event bind:increment="handleIncrement" />
+
+
+<!-- 5.tab-control的练习 -->
+<w-tab-control title="{{title}}" bind:itemClick="itemClick"/>
+
+<!-- 6.直接选中组件修改数据/调用方法 -->
+<button size="mini" bind:tap="handleIncrementCpn">修改组件</button>
+<my-sel id="sel-id" />

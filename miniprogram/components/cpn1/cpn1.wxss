@@ -1,0 +1,4 @@
+.box {
+  color: pink;
+  font-size: 64rpx;
+}

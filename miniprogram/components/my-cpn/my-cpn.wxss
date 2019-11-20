@@ -1,0 +1,9 @@
+.title {
+  color: blue;
+  font-size: 64rpx;
+  font-weight: 700;
+}
+
+.content {
+  font-size: 28rpx;
+}
