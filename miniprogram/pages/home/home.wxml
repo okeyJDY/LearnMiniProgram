@@ -24,3 +24,27 @@
 <!-- 6.直接选中组件修改数据/调用方法 -->
 <button size="mini" bind:tap="handleIncrementCpn">修改组件</button>
 <my-sel id="sel-id" />
+
+<!-- 7.1.单个插槽的使用 -->
+<my-slot>
+  <button size="mini">我是插入的按钮\n</button>
+  <text>我是插入的文本</text>
+</my-slot>
+
+<my-slot>
+  <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" />
+</my-slot>
+
+<my-slot>
+  <slider value="60" />
+</my-slot>
+
+<!-- 7.2.多插槽的使用 -->
+<button size="mini" bind:tap="handleChangeShow">切换显示</button>
+<block wx:if="{{isShow}}">
+  <my-mslot>
+    <button size="mini" slot="slot2">我是插入的按钮</button>
+    <slider slot="slot1" value="40" />
+    <text slot="slot3">hahaha</text>
+  </my-mslot>
+</block>

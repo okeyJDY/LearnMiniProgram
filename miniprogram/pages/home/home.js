@@ -2,7 +2,8 @@
 Page({
   data: {
     counter: 0,
-    title: ['衣服', '裤子', '鞋子']
+    title: ['衣服', '裤子', '鞋子'],
+    isShow: true
   },
   handleIncrement(event) {
     console.log(event)
@@ -19,5 +20,10 @@ Page({
       //   counter: selCpn.data.counter + 1
       // })
     selCpn.incrementCounter()
+  },
+  handleChangeShow() {
+    this.setData({
+      isShow: !this.data.isShow
+    })
   }
 })

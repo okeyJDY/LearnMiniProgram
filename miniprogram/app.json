@@ -1,6 +1,7 @@
 {
-  "pages": [
-    "pages/home/home"
-  ],
-  "usingComponents": {}
+	"pages": [
+		"pages/home/home"
+	],
+	"usingComponents": {},
+	"sitemapLocation": "sitemap67.json"
 }
