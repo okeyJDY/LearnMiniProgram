@@ -1,66 +1,69 @@
 // miniprogram/pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleShowToast() {
+    wx.showToast({
+      title: '加载ing',
+      icon: 'loading',
+      duration: 3000,
+      mask: true,
+      success: () => {
+        console.log('加载成功');
+      },
+      complete: () => {
+        console.log('回调结束');
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleShowModal() {
+    wx.showModal({
+      title: '我是标题',
+      content: '哈哈哈',
+      // showCancel: false
+      cancelText: '退出',
+      cancelColor: '#21252b',
+      success: (res) => {
+        if (res.confirm) {
+          console.log('用户点击了确定');
+        } else if (res.cancel) {
+          console.log('用户点击了取消');
+        }
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleShowLoading() {
+    wx.showLoading({
+      title: '加载ing',
+      mask: true,
+      success: () => {
+        console.log('成功的回调函数');
+      },
+      fail: () => {
+        console.log('失败的回调函数');
+      },
+      complete: () => {
+        console.log('回调函数结束');
+      }
+    })
+    setTimeout(() => {
+      wx.hideLoading()
+    }, 2000);
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleShowActionSheet() {
+    wx.showActionSheet({
+      itemList: ['相册', '拍照'],
+      itemColor: '#e68664',
+      success: (res) => {
+        console.log('成功的回调函数', res.tapIndex);
+      },
+      fail: (res) => {
+        console.log('失败的回调函数', res.errMsg);
+      },
+      complete: () => {
+        console.log('回调函数结束');
+      }
+    })
   }
 })

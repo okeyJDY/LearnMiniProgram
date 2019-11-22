@@ -1,3 +1,14 @@
 <!--miniprogram/pages/home/home.wxml-->
 <text class="title">Hello World</text>
 <button size="mini">按钮</button>
+
+
+<button bind:tap="handleShowToast">showToast</button>
+
+<button bind:tap="handleShowModal">showModal</button>
+
+<button bind:tap="handleShowLoading">showLoading</button>
+
+<button bind:tap="handleShowActionSheet">showActionSheet</button>
+
+<button open-type="share">share</button>
