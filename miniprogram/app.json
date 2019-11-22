@@ -1,6 +1,22 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/abbout/about"
-  ]
+    "pages/about/about"
+  ],
+  "tabBar": {
+    "color": "#ff577",
+    "selectedColor": "",
+    "backgroundColor": "",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于"
+      }
+    ]
+  }
 }

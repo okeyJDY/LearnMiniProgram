@@ -1,0 +1,4 @@
+.detail {
+  font-size: 64rpx;
+  color: red;
+}
