@@ -1,3 +1,24 @@
 <!--miniprogram/pages/home/home.wxml-->
-<text class="title">Hello World</text>
-<button size="mini">按钮</button>
+<!-- 轮播图 -->
+<w-swiper banners="{{banners}}" />
+
+<!-- 推荐展示 -->
+<w-recommend recommends="{{recommends}}" bind:imageLoad="handleImageLoad" />
+
+<!-- 流行图展示 -->
+<w-popular />
+
+
+<!-- tabControl -->
+<w-tab-control title="{{title}}"
+               bind:tabClick="tabClick"
+               id="tab-control"
+               class="{{isTabFixed ? 'fixed' : ''}}" />
+<w-tab-control title="{{title}}" bind:tabClick="tabClick" wx:if="{{isTabFixed}}" />
+
+<!-- 商品数据显示 -->
+<w-goods goods="{{goods[currentType].list}}" />
+
+<!-- 回到顶部 -->
+<!-- hidden: hidden属于对于自定义的组件是无效 -->
+<w-back-top wx:if="{{showBackTop}}" />
